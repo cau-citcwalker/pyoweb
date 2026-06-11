@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 시</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #3a322b;
+    --ink-soft: #6b5d4f;
+    --paper: #fbf6ec;
+    --paper-edge: #efe5d2;
+    --accent: #b08968;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Gowun Batang', serif;
+    background:
+      radial-gradient(circle at 20% 20%, #f3ead7 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, #e9dcc4 0%, transparent 50%),
+      linear-gradient(135deg, #efe3cc 0%, #dccaae 100%);
+    color: var(--ink);
+  }
+
+  .sheet {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    padding: 70px 56px 80px;
+    background: var(--paper);
+    border-radius: 4px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.04),
+      0 20px 50px -20px rgba(80,60,40,0.45);
+    border: 1px solid var(--paper-edge);
+  }
+
+  /* 종이 질감 + 가장자리 음영 */
+  .sheet::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+    pointer-events: none;
+    box-shadow: inset 0 0 60px rgba(150,120,80,0.10);
+  }
+
+  .ornament {
+    text-align: center;
+    color: var(--accent);
+    font-size: 22px;
+    letter-spacing: 0.5em;
+    margin-bottom: 28px;
+    opacity: 0.8;
+  }
+
+  .title {
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .author {
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 36px;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    margin: 0 auto 40px;
+    background: linear-gradient(to right, transparent, var(--accent), transparent);
+  }
+
+  .poem {
+    font-size: 1.18rem;
+    line-height: 2.4;
+    text-align: center;
+    white-space: pre-wrap;       /* 줄바꿈 그대로 유지 */
+    word-break: keep-all;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .poem .stanza { margin-bottom: 1.6em; }
+
+  .footer-ornament {
+    text-align: center;
+    color: var(--accent);
+    font-size: 18px;
+    letter-spacing: 0.5em;
+    margin-top: 44px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    .sheet { padding: 50px 28px 56px; }
+    .title { font-size: 1.6rem; }
+    .poem { font-size: 1.05rem; line-height: 2.2; }
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <div class="ornament">❦</div>
+
+    <!-- ✏️ 시 제목을 여기에 -->
+    <h1 class="title">제목을 입력하세요</h1>
+    <p class="author">글 · 이름</p>
+
+    <div class="divider"></div>
+
+    <!-- ✏️ 아래 .poem 안에 시를 쓰세요.
+         한 연(聯)을 .stanza 로 감싸면 연 사이 간격이 생깁니다. -->
+    <div class="poem">
+      <p class="stanza">여기에 시의 첫 번째 연을 적어요
+다음 줄도 이렇게 이어서</p>
+
+      <p class="stanza">한 칸 띄우고 두 번째 연
+마음을 담아서</p>
+    </div>
+
+    <div class="footer-ornament">⁂</div>
+  </main>
+</body>
+</html>
